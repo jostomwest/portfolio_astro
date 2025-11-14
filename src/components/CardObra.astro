@@ -1,0 +1,58 @@
+---
+const { imagen, titulo, descripcion, sitio } = Astro.props;
+const { fecha, nombre, año, categoria, aspecto } = Astro.props;
+console.log("IMAGEN RECIBIDA:", imagen);
+---
+
+<article class="obra">
+  <a href={sitio} class="obra__link">
+    {imagen && <img src={imagen.src} alt={titulo} class="obra__image" />}
+
+    <div class="obra__content">
+      <h2 class="obra__tittle">{titulo}</h2>
+      <p class="obra__description">{descripcion}</p>
+      <dl class="obra__details">
+        <dt>{fecha}</dt>
+        <dd>{nombre}</dd>
+        <dt>{año}</dt>
+        <dt>{categoria}</dt>
+      </dl>
+    </div>
+  </a>
+</article>
+
+<style scoped>
+  .obra {
+    /* max-width: 300px; */
+    position: relative;
+    overflow: clip;
+  }
+
+  .obra__image {
+    width: 100%;
+    aspect-ratio: {aspecto};
+    object-fit: contain;
+    display: block;
+  }
+
+  .obra__content {
+    position: absolute;
+    inset: 0; /* igual que top:0; left:0; right:0; bottom:0 */
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .obra:hover .obra__content {
+    opacity: 1;
+  }
+</style>

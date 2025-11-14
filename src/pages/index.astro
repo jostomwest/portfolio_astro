@@ -1,0 +1,146 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PaginaPrincipal from "../components/PaginaPrincipal.astro";
+import CardObra from "../components/CardObra.astro";
+import imagen1 from "../imgs/imagen1.jpg";
+import imagen2 from "../imgs/imagen2.jpg";
+import imagen3 from "../imgs/imagen3.jpg";
+import imagen4 from "../imgs/imagen4.jpg";
+import imagen5 from "../imgs/imagen5.jpg";
+import imagen6 from "../imgs/imagen6.jpg";
+import imagen7 from "../imgs/imagen7.jpg";
+import imagen8 from "../imgs/imagen8.jpg";
+import imagen9 from "../imgs/imagen9.jpg";
+import imagen10 from "../imgs/imagen10.jpg";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <div class="contenedor">
+    <PaginaPrincipal />
+
+    <div class="pestaña_trabajos">
+      <h2 id="pestaña_trabajos_tittle">Trabajos</h2>
+
+      <div class="trabajos_obras">
+        <CardObra
+          sitio="http://instagram.com/jostomprint/"
+          titulo="Serigrafia"
+          imagen={imagen1}
+        />
+        <CardObra
+          sitio="http://instagram.com/fraktus.ar/"
+          titulo="Fraktus"
+          imagen={imagen2}
+          aspecto="9 / 16"
+        />
+        <CardObra
+          sitio="http://instagram.com/j.o.s.t.o.m/"
+          titulo="Diseño"
+          imagen={imagen4}
+          aspecto="9 / 16"
+        />
+      </div>
+    </div>
+    <div class="proyectos_academicos">
+      <h2 id="proyectos_academicos_tittle">Proyectos Academicos</h2>
+      <div class="proyectos_academicos_obras">
+        <CardObra imagen={imagen5} aspecto="16 / 9" />
+        <CardObra imagen={imagen6} aspecto="16 / 9" />
+        <CardObra imagen={imagen7} aspecto="16 / 9" />
+        <CardObra imagen={imagen8} aspecto="16 / 9" />
+        <CardObra imagen={imagen9} aspecto="16 / 9" />
+        <CardObra imagen={imagen10} aspecto="16 / 9" />
+      </div>
+      <div class="info_artist">
+        <h2 id="info_id_tittle">Info</h2>
+
+        <div class="info_artist_content">
+          <CardObra imagen={imagen1} />
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .contenedor {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .pestaña_trabajos {
+        width: 100vw;
+        margin: 2px auto;
+        background-color: orange;
+      }
+
+      #pestaña_trabajos_tittle {
+        color: black;
+        text-transform: uppercase;
+        font-size: 2vw;
+        text-align: center;
+      }
+
+      .trabajos_obras {
+        width: 100%;
+        height: 100vh; /* altura total de la pantalla */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+      }
+
+      .proyectos_academicos {
+        width: 100%;
+        height: 100vh; /* altura total de la pantalla */
+        margin: 0 0;
+        background-color: rgb(5, 5, 134);
+        box-sizing: border-box;
+      }
+
+      .proyectos_academicos_obras {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        margin: 20px 20px;
+        width: 100vw;
+        height: 100%;
+      }
+
+      #proyectos_academicos_tittle {
+        color: white;
+        text-transform: uppercase;
+        font-size: 2vw;
+        text-align: center;
+      }
+
+      .info_artist {
+        width: 100vw;
+        height: 100vh; /* altura total de la pantalla */
+        margin: 0 auto;
+        background-color: black;
+      }
+
+      #info_id_tittle {
+        color: white;
+        text-transform: uppercase;
+        font-size: 2vw;
+        text-align: center;
+      }
+
+      .info h2 {
+        color: orange;
+        text-transform: uppercase;
+        font-size: 2vw;
+      }
+
+      .info_artist_content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 10px 10px;
+        width: 100vw;
+        height: 100%;
+      }
+    </style>
+  </div>
+</Layout>

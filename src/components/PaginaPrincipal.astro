@@ -1,0 +1,85 @@
+<div class="principal">
+  <a href="#pestaña_trabajos_tittle" class="trabajos_link">
+    <article class="trabajos">
+      <h2 class="trabajos__titulo">Trabajos</h2>
+    </article>
+  </a>
+
+  <a href="#proyectos_academicos_tittle" class="proyectos_link">
+    <article class="proyectos">
+      <h2 class="proyectos__titulo">Proyectos Académicos</h2>
+    </article>
+  </a>
+
+  <a href="#info_id_tittle" class="info_link">
+    <article class="info">
+      <h2 class="info__titulo">Info</h2>
+    </article>
+  </a>
+</div>
+
+<style scoped>
+  .principal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* tres columnas iguales */
+    height: 100%;
+  }
+  .principal a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+  }
+
+  .principal a:hover {
+    cursor: pointer;
+  }
+
+  .trabajos,
+  .proyectos,
+  .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  #pestaña_trabajos_tittle {
+    color: black;
+    text-transform: uppercase;
+    font-size: 2vw;
+    text-align: center;
+  }
+
+  .trabajos {
+    background-color: orange;
+    place-items: center;
+  }
+
+  .trabajos h2 {
+    color: black;
+    text-transform: uppercase;
+    font-size: 2vw;
+    margin: 0;
+    padding: 0;
+  }
+  .proyectos {
+    background-color: rgb(2, 2, 184);
+  }
+
+  .proyectos h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 2vw;
+  }
+
+  .info {
+    background-color: black;
+  }
+
+  .info h2 {
+    color: orange;
+    text-transform: uppercase;
+    font-size: 2vw;
+  }
+</style>
